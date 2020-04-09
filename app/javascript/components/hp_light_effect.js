@@ -1,63 +1,53 @@
-
-
 const hpLightEffect = () => {
+  let effectTimer;
+  let lightSize = 3;
+  const overlay = document.querySelector('.overlay');
 
-  let timer;
-  const overlay = document.querySelector(".overlay")
-  console.log(overlay)
-  const setLightSize = lightSize => {
-    overlay.style.setProperty('--lightsize', lightSize + 'vmax')
-  }
+  const setLightSize = (size) => {
+    if (size >= 3) {
+      overlay.style.setProperty('--lightsize', `${size}vmax`);
+    }
+  };
 
-  const getLightSize = () => {
-    return overlay.style.cssText.match(/\d+\.*\d*/)[0]
-  }
+  setLightSize(lightSize);
 
-  setLightSize(3)
-  getLightSize(3)
-
-  const update = e => {
+  const updateLightPosition = (event) => {
     clearInterval();
-    let x = e.clientX || e.touches[0].clientX
-    let y = e.clientY || e.touches[0].clientY
+    const x = event.clientX || event.touches[0].clientX;
+    const y = event.clientY || event.touches[0].clientY;
 
-    overlay.style.setProperty('--cursorX', x + 'px')
-    overlay.style.setProperty('--cursorY', y + 'px')
-  }
+    overlay.style.setProperty('--cursorX', `${x}px`);
+    overlay.style.setProperty('--cursorY', `${y}px`);
+  };
 
-
-  const grow = () => {
-    let lightSize = 3
-    timer = setInterval(function(){
-      lightSize += 0.1
-      setLightSize(lightSize)
-      if (lightSize > 10) {
-        clearInterval(timer)
+  const shrinkLight = () => {
+    clearInterval(effectTimer);
+    effectTimer = setInterval(() => {
+      lightSize -= 0.5;
+      setLightSize(lightSize);
+      if (lightSize <= 3) {
+        clearInterval(effectTimer);
+        setLightSize(3);
       }
     }, 10);
-  }
+  };
+
+  const growLight = () => {
+    effectTimer = setInterval(() => {
+      document.addEventListener('mouseup', shrinkLight);
+      lightSize += 0.1;
+      setLightSize(lightSize);
+      if (lightSize >= 10) {
+        clearInterval(effectTimer);
+        setLightSize(10);
+      }
+    }, 10);
+  };
 
 
-  const shrink = e => {
-    let lightSize = getLightSize();
-    clearInterval(timer);
-    timer = setInterval(function(){
-      lightSize -= 0.5
-      setLightSize(lightSize)
-        if (lightSize < 3) {
-          clearInterval(timer)
-        }
-      }, 10);
-  }
+  overlay.addEventListener('mousemove', updateLightPosition);
+  overlay.addEventListener('touchmove', updateLightPosition);
+  overlay.addEventListener('mousedown', growLight);
+};
 
-
-  overlay.addEventListener('mousemove',update)
-  overlay.addEventListener('touchmove',update)
-
-  overlay.addEventListener('mousedown', grow)
-
-  overlay.addEventListener('click', shrink)
-
-}
-
-export { hpLightEffect }
+export default hpLightEffect;
