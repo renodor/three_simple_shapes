@@ -1,1 +1,23 @@
 // Specific CSS for your home-page
+
+
+.hp-grid {
+  z-index: 50;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(5, 1fr);
+}
+
+/*   Flashlight Overlay*/
+.overlay {
+  z-index: 100;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  cursor: none;
+  --cursorX: 50vw;
+  --cursorY: 50vh;
+  opacity: 0.97;
+  background: radial-gradient(circle var(--lightsize) at var(--cursorX) var(--cursorY),rgba(0,0,0,0) 70%,rgba(0,0,0,.5) 80%,rgba(0,0,0,1) 100%)
+}

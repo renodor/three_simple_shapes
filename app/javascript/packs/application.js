@@ -24,11 +24,13 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import { hpLightEffect } from '../components/hp_light_effect';
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  // initSelect2();
+  hpLightEffect();
 });
