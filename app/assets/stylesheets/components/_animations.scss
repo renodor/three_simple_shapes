@@ -1,68 +1,68 @@
-.shake1 {
-  animation: shake1 1.5s  alternate infinite;
-}
+// .shake1 {
+//   animation: shake1 1.5s  alternate infinite;
+// }
 
-.shake2 {
-  animation: shake2 2.5s  alternate infinite;
-}
+// .shake2 {
+//   animation: shake2 2.5s  alternate infinite;
+// }
 
-.shake3 {
-  animation: shake3 1.3s  alternate infinite;
-}
+// .shake3 {
+//   animation: shake3 1.3s  alternate infinite;
+// }
 
-@keyframes shake1 {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
+// @keyframes shake1 {
+//   0% { transform: translate(1px, 1px) rotate(0deg); }
+//   10% { transform: translate(-1px, -2px) rotate(-1deg); }
+//   20% { transform: translate(-3px, 0px) rotate(1deg); }
+//   30% { transform: translate(3px, 2px) rotate(0deg); }
+//   40% { transform: translate(1px, -1px) rotate(1deg); }
+//   50% { transform: translate(-1px, 2px) rotate(-1deg); }
+//   60% { transform: translate(-3px, 1px) rotate(0deg); }
+//   70% { transform: translate(3px, 1px) rotate(-1deg); }
+//   80% { transform: translate(-1px, -1px) rotate(1deg); }
+//   90% { transform: translate(1px, 2px) rotate(0deg); }
+//   100% { transform: translate(1px, -2px) rotate(-1deg); }
+// }
 
-@keyframes shake2 {
-  0% { transform: translate(-2px, -1px) rotate(0deg); }
-  10% { transform: translate(1px, 2px) rotate(1deg); }
-  20% { transform: translate(3px, 0px) rotate(-1deg); }
-  30% { transform: translate(-3px, -2px) rotate(0deg); }
-  40% { transform: translate(-1px, 1px) rotate(-1deg); }
-  50% { transform: translate(1px, -2px) rotate(1deg); }
-  60% { transform: translate(3px, -1px) rotate(0deg); }
-  70% { transform: translate(3px, -1px) rotate(1deg); }
-  80% { transform: translate(1px, 1px) rotate(-1deg); }
-  90% { transform: translate(-1px, -2px) rotate(0deg); }
-  100% { transform: translate(-1px, 2px) rotate(1deg); }
-}
+// @keyframes shake2 {
+//   0% { transform: translate(-2px, -1px) rotate(0deg); }
+//   10% { transform: translate(1px, 2px) rotate(1deg); }
+//   20% { transform: translate(3px, 0px) rotate(-1deg); }
+//   30% { transform: translate(-3px, -2px) rotate(0deg); }
+//   40% { transform: translate(-1px, 1px) rotate(-1deg); }
+//   50% { transform: translate(1px, -2px) rotate(1deg); }
+//   60% { transform: translate(3px, -1px) rotate(0deg); }
+//   70% { transform: translate(3px, -1px) rotate(1deg); }
+//   80% { transform: translate(1px, 1px) rotate(-1deg); }
+//   90% { transform: translate(-1px, -2px) rotate(0deg); }
+//   100% { transform: translate(-1px, 2px) rotate(1deg); }
+// }
 
-@keyframes shake3 {
-  10%, 90% { transform: translate(0, -1px) rotate(1deg); }
-  20%, 80% { transform: translate(0, 2px) rotate(-1deg); }
-  30%, 50%, 70% { transform: translate(0, -4px) rotate(1deg); }
-  40%, 60% { transform: translate(0, 3px) rotate(0deg); }
-}
+// @keyframes shake3 {
+//   10%, 90% { transform: translate(0, -1px) rotate(1deg); }
+//   20%, 80% { transform: translate(0, 2px) rotate(-1deg); }
+//   30%, 50%, 70% { transform: translate(0, -4px) rotate(1deg); }
+//   40%, 60% { transform: translate(0, 3px) rotate(0deg); }
+// }
 
 
 @keyframes rotating-right {
-  from {
+  0% {
     transform: rotate(0deg);
     transform-origin: center center;
   }
-  to {
+  100% {
     transform: rotate(360deg);
     transform-origin: center center;
   }
 }
 
 @keyframes rotating-left {
-  from {
+  0% {
     transform: rotate(0deg);
     transform-origin: center center;
   }
-  to {
+  100% {
     transform: rotate(-360deg);
     transform-origin: center center;
   }
@@ -81,92 +81,175 @@
 }
 
 @keyframes goes-right {
-  0% { transform: translate(0%, 0); }
+  0% { transform: translate(0, 0); }
   100% { transform: translate(100%, 0); }
 }
 
 @keyframes goes-right2 {
   0% { transform: translate(-100%, 0); }
-  100% { transform: translate(0%, 0); }
+  100% { transform: translate(0, 0); }
 }
 
-// @keyframes goes-right3 {
-//   0% { transform: translate(-50%, 0); }
-//   100% { transform: translate(50%, 0); }
-// }
+@keyframes goes-left {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
+}
 
-// @keyframes goes-left {
-//   0% { transform: translate(100%, 0); }
-//   100% { transform: translate(-100%, 0); }
-// }
+@keyframes goes-left2 {
+  0% { transform: translate(100%, 0); }
+  100% { transform: translate(0, 0); }
+}
 
-@keyframes goes-up {
-  // 0% { transform: translate(50%, 100%); }
+@keyframes goes-diag-up {
   0% { transform: translate(0, 0); }
   100% { transform: translate(-50%, -100%); }
 }
 
-@keyframes goes-up2 {
+@keyframes goes-diag-up2 {
   0% { transform: translate(50%, 100%); }
   100% { transform: translate(0, 0); }
-  // 100% { transform: translate(-50%, -100%); }
 }
 
-@keyframes goes-down {
+@keyframes goes-diag-down {
   0% { transform: translate(0, 0); }
   100% { transform: translate(-50%, 100%); }
 }
 
-@keyframes goes-down2 {
+@keyframes goes-diag-down2 {
   0% { transform: translate(50%, -100%); }
   100% { transform: translate(0, 0); }
 }
 
+@keyframes goes-down {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(0, 100%); }
+}
 
+@keyframes goes-down2 {
+  0% { transform: translate(0, -100%); }
+  100% { transform: translate(0, 0%); }
+}
+
+@keyframes goes-up {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(0, -100%); }
+}
+
+@keyframes goes-up2 {
+  0% { transform: translate(0, 100%); }
+  100% { transform: translate(0, 0%); }
+}
+
+#svg-shapes {
+  fill: white;
+}
 
 #svg-shapes #triangle {
   #inner-triangle #inner-triangle-left {
-    animation: goes-down 2s linear infinite;
+    animation: goes-diag-down 2s linear infinite;
   }
   #inner-triangle #inner-triangle-bottom {
-    animation: goes-right 2s linear infinite;
+    animation: goes-diag-right 2s linear infinite;
   }
   #inner-triangle #inner-triangle-right {
-    animation: goes-up 2s linear infinite;
+    animation: goes-diag-up 2s linear infinite;
   }
 
   #outer-triangle #outer-triangle-left {
-    animation: goes-down 3s linear infinite;
+    animation: goes-diag-down 3s linear infinite;
   }
   #outer-triangle #outer-triangle-bottom {
-    animation: goes-right 3s linear infinite;
+    animation: goes-diag-right 3s linear infinite;
   }
   #outer-triangle #outer-triangle-right {
-    animation: goes-up 3s linear infinite;
+    animation: goes-diag-up 3s linear infinite;
   }
 }
 
 #svg-shapes #triangle2 {
   #inner-triangle #inner-triangle-left {
-    animation: goes-down2 2s linear infinite;
+    animation: goes-diag-down2 2s linear infinite;
   }
   #inner-triangle #inner-triangle-bottom {
-    animation: goes-right2 2s linear infinite;
+    animation: goes-diag-right2 2s linear infinite;
   }
   #inner-triangle #inner-triangle-right {
-    animation: goes-up2 2s linear infinite;
+    animation: goes-diag-up2 2s linear infinite;
   }
 
   #outer-triangle #outer-triangle-left {
-    animation: goes-down2 3s linear infinite;
+    animation: goes-diag-down2 3s linear infinite;
   }
   #outer-triangle #outer-triangle-bottom {
-    animation: goes-right2 3s linear infinite;
+    animation: goes-diag-right2 3s linear infinite;
   }
   #outer-triangle #outer-triangle-right {
-    animation: goes-up2 3s linear infinite;
+    animation: goes-diag-up2 3s linear infinite;
   }
 }
+
+#svg-shapes #square {
+
+  #inner-square #inner-square-top {
+    animation: goes-left 2s linear infinite;
+  }
+
+  #inner-square #inner-square-left {
+    animation: goes-down 2s linear infinite;
+  }
+  #inner-square #inner-square-bottom {
+    animation: goes-right 2s linear infinite;
+  }
+  #inner-square #inner-square-right {
+    animation: goes-up 2s linear infinite;
+  }
+
+  #outer-square #outer-square-top {
+    animation: goes-right 3s linear infinite;
+  }
+
+  #outer-square #outer-square-left {
+    animation: goes-up 3s linear infinite;
+  }
+  #outer-square #outer-square-bottom {
+    animation: goes-left 3s linear infinite;
+  }
+  #outer-square #outer-square-right {
+    animation: goes-down 3s linear infinite;
+  }
+}
+
+#svg-shapes #square2 {
+
+  #inner-square #inner-square-top {
+    animation: goes-left2 2s linear infinite;
+  }
+
+  #inner-square #inner-square-left {
+    animation: goes-down2 2s linear infinite;
+  }
+  #inner-square #inner-square-bottom {
+    animation: goes-right2 2s linear infinite;
+  }
+  #inner-square #inner-square-right {
+    animation: goes-up2 2s linear infinite;
+  }
+
+  #outer-square #outer-square-top {
+    animation: goes-right2 3s linear infinite;
+  }
+  #outer-square #outer-square-left {
+    animation: goes-up2 3s linear infinite;
+  }
+  #outer-square #outer-square-bottom {
+    animation: goes-left2 3s linear infinite;
+  }
+  #outer-square #outer-square-right {
+    animation: goes-down2 3s linear infinite;
+  }
+}
+
+
 
 
 
