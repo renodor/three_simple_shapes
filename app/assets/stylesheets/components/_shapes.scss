@@ -62,27 +62,10 @@
 
 .triangle {
   margin: 0 auto;
-  width: 0;
-  height: 0;
-  border-left: 100px solid transparent;
-  border-right: 100px solid transparent;
-  border-bottom: 150px solid #bbb;
-  position: relative;
+  width: 150px;
+  height: 150px;
   grid-row-start: 3;
   grid-column-start: 3;
-  &:before {
-    content: "";
-    width: 0;
-    height: 0;
-    border-left: 80px solid transparent;
-    border-right: 80px solid transparent;
-    border-bottom: 120px solid #ddd;
-    position: absolute;
-    left: -80px;
-    right: 0;
-    top: 20px;
-    bottom: 0;
-  }
 }
 
 .square {
