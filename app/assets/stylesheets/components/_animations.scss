@@ -80,11 +80,6 @@
   }
 }
 
-@keyframes goes-right {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(100%, 0); }
-}
-
 @keyframes goes-right2 {
   0% { transform: translate(-100%, 0); }
   100% { transform: translate(0, 0); }
@@ -149,7 +144,7 @@
     animation: goes-diag-down 2s linear infinite;
   }
   #inner-triangle #inner-triangle-bottom {
-    animation: goes-diag-right 2s linear infinite;
+    animation: goes-right 2s linear infinite;
   }
   #inner-triangle #inner-triangle-right {
     animation: goes-diag-up 2s linear infinite;
@@ -159,7 +154,7 @@
     animation: goes-diag-down 3s linear infinite;
   }
   #outer-triangle #outer-triangle-bottom {
-    animation: goes-diag-right 3s linear infinite;
+    animation: goes-right 3s linear infinite;
   }
   #outer-triangle #outer-triangle-right {
     animation: goes-diag-up 3s linear infinite;
@@ -171,7 +166,7 @@
     animation: goes-diag-down2 2s linear infinite;
   }
   #inner-triangle #inner-triangle-bottom {
-    animation: goes-diag-right2 2s linear infinite;
+    animation: goes-right2 2s linear infinite;
   }
   #inner-triangle #inner-triangle-right {
     animation: goes-diag-up2 2s linear infinite;
@@ -181,7 +176,7 @@
     animation: goes-diag-down2 3s linear infinite;
   }
   #outer-triangle #outer-triangle-bottom {
-    animation: goes-diag-right2 3s linear infinite;
+    animation: goes-right2 3s linear infinite;
   }
   #outer-triangle #outer-triangle-right {
     animation: goes-diag-up2 3s linear infinite;
@@ -249,8 +244,15 @@
   }
 }
 
+:root {
+  --x: 100%;
+}
 
 
+@keyframes goes-right {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(var(--x), 0); }
+}
 
 
 
