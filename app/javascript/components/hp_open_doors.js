@@ -1,4 +1,6 @@
 const openDoor = (door) => {
+  // recursive function that draw lineParams.length number of lines one after the other
+  // (calling-back itslef in the else statement if there are still lines to draw)
   const drawLine = (lineParams) => {
     const { element, direction, limit } = lineParams[0];
     let lineSize = 1;
@@ -17,8 +19,11 @@ const openDoor = (door) => {
     }, 10);
   };
 
+  // function to help create line objects with an element (html dom element),
+  // a direction (width or height), and a limit (%)
   const createLine = (element, direction, limit) => ({ element, direction, limit });
 
+  // draw lines corresponding to the door that need to be open
   if (door === 1) {
     const line1 = createLine(document.querySelector('.v-line-bottom'), 'height', 100);
     const line2 = createLine(document.querySelector('.h-line-left'), 'width', 100);
@@ -65,7 +70,7 @@ const hpDoorPassword = () => {
     }
   };
 
-  // Each time one bell is click, stor its id in the current pass array
+  // Each time one bell is click, store its id in the current pass array
   bells.forEach((bell) => {
     bell.addEventListener('click', (event) => {
       // Only store the last clicked bells id
