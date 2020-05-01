@@ -1,19 +1,26 @@
-const openDoor = (door) => {
-  // recursive function that draw lineParams.length number of lines one after the other
+const openDoor = (doorNum) => {
+  const doorAnimation = () => {
+    const currentDoor = document.querySelector(`#svg-shapes .door${doorNum}`);
+    currentDoor.style.zIndex = '102';
+  };
+
+  // recursive function that draw n number of lines one after the other (with n = lineParams.length)
   // (calling-back itslef in the else statement if there are still lines to draw)
+  // and then call the doorAnimation function
   const drawLine = (lineParams) => {
     const { element, direction, limit } = lineParams[0];
     let lineSize = 1;
     const lineTimer = setInterval(() => {
       if (lineSize < limit) {
         lineSize += 1;
-        element.style.zIndex = '101';
         element.setAttribute('style', `${direction}: ${lineSize}%`);
       } else {
         clearInterval(lineTimer);
         lineParams.shift();
         if (lineParams.length > 0) {
           drawLine(lineParams);
+        } else {
+          doorAnimation();
         }
       }
     }, 10);
@@ -24,26 +31,26 @@ const openDoor = (door) => {
   const createLine = (element, direction, limit) => ({ element, direction, limit });
 
   // draw lines corresponding to the door that need to be open
-  if (door === 1) {
+  if (doorNum === 1) {
     const line1 = createLine(document.querySelector('.v-line-bottom'), 'height', 100);
     const line2 = createLine(document.querySelector('.h-line-left'), 'width', 100);
-    const line3 = createLine(document.querySelector('.v-line-left'), 'height', 50);
+    const line3 = createLine(document.querySelector('.v-line-left'), 'height', 100);
     drawLine([line1, line2, line3]);
-  } else if (door === 2) {
+  } else if (doorNum === 2) {
     const line1 = createLine(document.querySelector('.v-line-bottom'), 'height', 100);
-    const line2 = createLine(document.querySelector('.v-line-middle'), 'height', 50);
+    const line2 = createLine(document.querySelector('.v-line-middle'), 'height', 100);
     drawLine([line1, line2]);
   } else {
     const line1 = createLine(document.querySelector('.v-line-bottom'), 'height', 100);
     const line2 = createLine(document.querySelector('.h-line-right'), 'width', 100);
-    const line3 = createLine(document.querySelector('.v-line-right'), 'height', 50);
+    const line3 = createLine(document.querySelector('.v-line-right'), 'height', 100);
     drawLine([line1, line2, line3]);
   }
 };
 
 
 const hpDoorPassword = () => {
-  const bells = document.querySelectorAll('.bell');
+  const bells = document.querySelectorAll('.bell-placeholder');
 
   // array to store the current combination
   const currentPass = [];
@@ -80,7 +87,6 @@ const hpDoorPassword = () => {
         currentPass.shift();
         currentPass.push(event.currentTarget.dataset.id);
       }
-
       checkPass(currentPass.join(''));
     });
   });

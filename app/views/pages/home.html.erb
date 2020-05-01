@@ -2,7 +2,7 @@
 </div>
 <div class="hp-grid">
 
-  <%= inline_svg_tag('circle.svg', class: 'circle') %>
+  <%= inline_svg_tag('circle.svg', class: 'circle door1') %>
   <div class="v-line v-line-left"></div>
   <div class="h-line h-line-left"></div>
   <%= inline_svg_tag('triangle.svg', class: 'triangle') %>
@@ -18,10 +18,21 @@
   <div class="key"></div>
 
   <div class="bells">
-    <div data-id="1" class="bell-placeholder"></div>
-    <div data-id="1" class="bell">1</div>
-    <div data-id="2" class="bell">2</div>
-    <div data-id="3" class="bell">3</div>
-    <div data-id="4" class="bell">4</div>
+    <div class="bell">
+      1
+      <div data-id="1" class="bell-placeholder"></div>
+    </div>
+    <div class="bell">
+            2
+      <div data-id="2" class="bell-placeholder"></div>
+    </div>
+    <div class="bell">
+            3
+      <div data-id="3" class="bell-placeholder"></div>
+    </div>
+    <div class="bell">
+            4
+      <div data-id="4" class="bell-placeholder"></div>
+    </div>
   </div>
 </div>

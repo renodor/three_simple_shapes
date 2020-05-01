@@ -44,10 +44,15 @@ const hpLightEffect = () => {
     }, 10);
   };
 
-
   overlay.addEventListener('mousemove', updateLightPosition);
   overlay.addEventListener('touchmove', updateLightPosition);
   overlay.addEventListener('mousedown', growLight);
+
+  const bellPlaceHolders = document.querySelectorAll('.bell-placeholder');
+
+  bellPlaceHolders.forEach((bell) => {
+    bell.addEventListener('mousemove', updateLightPosition);
+  });
 };
 
 export default hpLightEffect;
