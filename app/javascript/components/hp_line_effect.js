@@ -1,36 +1,41 @@
 const hpLinesEffect = () => {
-  const circleButton = document.querySelector('.circle-button-placeholder');
+  const key = document.querySelector('.key');
 
-  const drawCircleLine2 = () => {
-    const vLine = document.querySelector('.circle-vline2');
+  const openDoors = (door) => {
+    console.log(`open door ${door}`);
+  };
+
+
+  const drawHline = () => {
+    const hLine = document.querySelector('.h-line-middle');
     let lineHeight = 1;
     const lineTimer = setInterval(() => {
       if (lineHeight < 100) {
         lineHeight += 1;
-        vLine.style.zIndex = '101';
-        vLine.style.height = `${lineHeight}%`;
+        hLine.style.zIndex = '101';
+        hLine.style.height = `${lineHeight}%`;
       } else {
         clearInterval(lineTimer);
       }
     }, 10);
   };
 
-  const drawCircleLine1 = () => {
-    const hLine = document.querySelector('.circle-hline');
+  const drawVLine = () => {
+    const vLine = document.querySelector('.v-line-bottom');
     let lineWidth = 1;
     const lineTimer = setInterval(() => {
-      if (lineWidth < 60) {
+      if (lineWidth < 100) {
         lineWidth += 1;
-        hLine.style.zIndex = '101';
-        hLine.style.width = `${lineWidth}%`;
+        vLine.style.zIndex = '101';
+        vLine.style.height = `${lineWidth}%`;
       } else {
         clearInterval(lineTimer);
-        drawCircleLine2();
+        drawHline();
       }
     }, 10);
   };
 
-  circleButton.addEventListener('click', drawCircleLine1);
+  key.addEventListener('click', drawVLine);
 };
 
 export default hpLinesEffect;

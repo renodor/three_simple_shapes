@@ -29,11 +29,11 @@ import 'bootstrap';
 // Internal imports, e.g:
 import hpLightEffect from '../components/hp_light_effect';
 import hpLinesEffect from '../components/hp_line_effect';
-import hpDoorPassword from '../components/hp_door_password';
+import hpDoorPassword from '../components/hp_open_doors';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // hpLightEffect();
-  // hpLinesEffect();
+  // hpDrawLines();
   hpDoorPassword();
 });

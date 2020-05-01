@@ -1,12 +1,16 @@
 // doors
 
+#svg-shapes {
+  fill: white;
+}
+
 .circle {
   margin: 0 auto;
   height: 150px;
   width: 150px;
   display: inline-block;
   grid-row-start: 1;
-  grid-column-start: 2;
+  grid-column: 2 / 4
 }
 
 .triangle {
@@ -14,7 +18,7 @@
   width: 150px;
   height: 150px;
   grid-row-start: 1;
-  grid-column-start: 3;
+  grid-column: 4 / 6;
 }
 
 .square {
@@ -22,7 +26,7 @@
   height: 150px;
   width: 150px;
   grid-row-start: 1;
-  grid-column-start: 4;
+  grid-column: 6 / 8
 }
 
 
@@ -30,7 +34,7 @@
 
 .key {
   grid-row-start: 2;
-  grid-column: 3;
+  grid-column: 4 / 6;
   width: 10px;
   height: 10px;
   background-color: white;
@@ -41,7 +45,7 @@
 
 .bells {
   grid-row-start: 3;
-  grid-column: 2 / 5;
+  grid-column: 3 / 7;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,7 +55,6 @@
   width: 50px;
   height: 25px;
   background-color: white;
-  grid-row-start: 5;
   margin: 0 16px;
   display: flex;
   justify-content: center;
@@ -63,56 +66,51 @@
 
 // lines
 
-.h-line {
-  height: 100%;
-  width: 2px;
-  background-color: green;
-  margin: 0 auto;
-}
-
-.h-line-left {
-  grid-row-start: 1;
-  grid-column: 2;
-  align-self: end;
-  height: 50%;
-}
-
-.h-line-middle {
-  grid-row-start: 1;
-  grid-column: 3;
-  align-self: end;
-  height: 50%;
-}
-
-.h-line-right {
-  grid-row-start: 1;
-  grid-column: 4;
-  align-self: end;
-  height: 50%;
-}
-
-.h-line-bottom {
-  grid-row-start: 2;
-  grid-column: 3;
-}
-
 .v-line {
-  grid-row: 1;
-  grid-column: 2 / 4;
-  height: 2px;
-  width: 50%;
-  background-color: green;
-  justify-self: center;
+  // height: 100%;
+  width: 2px;
+  background-color: white;
+  margin: 0 auto;
   align-self: end;
-}
-
-.v-line-right {
-  grid-column: 3 / 5;
 }
 
 .v-line-left {
+  grid-row-start: 1;
   grid-column: 2 / 4;
 }
+
+.v-line-middle {
+  grid-row-start: 1;
+  grid-column: 4 / 6;
+}
+
+.v-line-right {
+  grid-row-start: 1;
+  grid-column: 6 / 8;
+}
+
+.v-line-bottom {
+  grid-row-start: 2;
+  grid-column: 4 / 6;
+}
+
+.h-line {
+  grid-row: 1;
+  height: 2px;
+  background-color: white;
+  align-self: end;
+}
+
+.h-line-left {
+  grid-column: 3 / 5;
+  justify-self: end;
+}
+
+.h-line-right {
+  grid-column: 5 / 7;
+  justify-self: start;
+}
+
 
 
 
