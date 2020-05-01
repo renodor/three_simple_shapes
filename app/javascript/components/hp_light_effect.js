@@ -2,7 +2,6 @@ const hpLightEffect = () => {
   let effectTimer;
   let lightSize = 3;
   const overlay = document.querySelector('.overlay');
-  const circleButton = document.querySelector('.circle-button-placeholder');
 
   const setLightSize = (size) => {
     if (size >= 3) {
@@ -48,8 +47,6 @@ const hpLightEffect = () => {
 
   overlay.addEventListener('mousemove', updateLightPosition);
   overlay.addEventListener('touchmove', updateLightPosition);
-  circleButton.addEventListener('mousemove', updateLightPosition);
-  circleButton.addEventListener('touchmove', updateLightPosition);
   overlay.addEventListener('mousedown', growLight);
 };
 
