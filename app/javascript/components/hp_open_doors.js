@@ -1,13 +1,12 @@
 const openDoor = (door) => {
   const drawLine = (lineParams) => {
-    const element = lineParams[0].element;
-    const cssProp = lineParams[0].direction;
+    const { element, direction, limit } = lineParams[0];
     let lineSize = 1;
     const lineTimer = setInterval(() => {
-      if (lineSize < lineParams[0].limit) {
+      if (lineSize < limit) {
         lineSize += 1;
         element.style.zIndex = '101';
-        element.setAttribute('style', `${cssProp}: ${lineSize}%`);
+        element.setAttribute('style', `${direction}: ${lineSize}%`);
       } else {
         clearInterval(lineTimer);
         lineParams.shift();
@@ -18,34 +17,23 @@ const openDoor = (door) => {
     }, 10);
   };
 
+  const createLine = (element, direction, limit) => ({ element, direction, limit });
 
-  class Line {
-    constructor(element, limit, direction) {
-      this._element = element;
-      this._limit = limit;
-      this._direction = direction;
-    }
-
-    get element() {
-      return this._element;
-    }
-
-    get limit() {
-      return this._limit;
-    }
-
-    get direction() {
-      return this._direction;
-    }
+  if (door === 1) {
+    const line1 = createLine(document.querySelector('.v-line-bottom'), 'height', 100);
+    const line2 = createLine(document.querySelector('.h-line-left'), 'width', 100);
+    const line3 = createLine(document.querySelector('.v-line-left'), 'height', 50);
+    drawLine([line1, line2, line3]);
+  } else if (door === 2) {
+    const line1 = createLine(document.querySelector('.v-line-bottom'), 'height', 100);
+    const line2 = createLine(document.querySelector('.v-line-middle'), 'height', 50);
+    drawLine([line1, line2]);
+  } else {
+    const line1 = createLine(document.querySelector('.v-line-bottom'), 'height', 100);
+    const line2 = createLine(document.querySelector('.h-line-right'), 'width', 100);
+    const line3 = createLine(document.querySelector('.v-line-right'), 'height', 50);
+    drawLine([line1, line2, line3]);
   }
-
-  const line1 = new Line(document.querySelector('.v-line-left'), 100, 'height');
-  const line2 = new Line(document.querySelector('.h-line-left'), 100, 'width');
-  const line3 = new Line(document.querySelector('.v-line-left'), 50, 'height');
-
-  console.log(line1)
-
-  // drawLine([line1, line2, line3]);
 };
 
 
