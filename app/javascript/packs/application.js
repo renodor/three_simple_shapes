@@ -24,15 +24,16 @@ require('channels');
 
 // External imports
 import 'bootstrap';
-import hpLightEffect from '../components/hp_light_effect';
-import hpLinesEffect from '../components/hp_line_effect';
 
 
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+import hpLightEffect from '../components/hp_light_effect';
+import hpLinesEffect from '../components/hp_line_effect';
+import hpDoorPassword from '../components/hp_door_password';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  hpLightEffect();
-  hpLinesEffect();
+  // hpLightEffect();
+  // hpLinesEffect();
+  hpDoorPassword();
 });
