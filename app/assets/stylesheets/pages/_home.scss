@@ -6,7 +6,8 @@
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template: repeat(5, 1fr) / repeat(5, 1fr);
+  grid-template: 3fr 1fr 1fr / repeat(5, 1fr);
+  align-items: center;
 }
 
 /*   Flashlight Overlay*/

@@ -7,9 +7,9 @@ const hpDoorPassword = () => {
   const pass2 = '3324';
   const pass3 = '4123';
 
-  openDoor(door) {
-
-  }
+  const openDoor = (door) => {
+    console.log(`open door ${door}`)
+  };
 
   const checkPass = (tryPass) => {
     switch (tryPass) {

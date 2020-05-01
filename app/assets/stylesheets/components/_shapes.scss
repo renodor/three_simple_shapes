@@ -3,68 +3,15 @@
   height: 150px;
   width: 150px;
   display: inline-block;
-  grid-row-start: 3;
+  grid-row-start: 1;
   grid-column-start: 2;
-}
-
-.circle-vline {
-  height: 75%;
-  width: 1px;
-  margin: 0 auto;
-  grid-column-start: 2;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  align-self: end;
-  position: relative;
-}
-
-.circle-vline2 {
-  background-color:#bbb;
-  width: 1px;
-  box-shadow: 0px 0px 10px 5px #ffeb3b6e;
-  margin: 0 auto;
-  grid-column-start: 2;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  align-self: end;
-  position: absolute;
-}
-
-.circle-hline {
-  background-color: #bbb;
-  height: 1px;
-  box-shadow: 0px 0px 10px 5px #ffeb3b6e;
-  margin: auto 10% auto 0;
-  grid-column-start: 1;
-  grid-column-end: 6;
-  grid-row-start: 1;
-  justify-self: right;
-  border-left: 5px solid #bbb;
-}
-
-.circle-button,
-.circle-button-placeholder {
-  height: 50px;
-  width: 50px;
-  background-color: #bbb;
-  border-radius: 50%;
-  grid-row-start: 1;
-  grid-column-start: 5;
-  align-self: center;
-  justify-self: center;
-}
-
-.circle-button-placeholder {
-  z-index: 101;
-  background-color: transparent;
-  cursor: pointer;
 }
 
 .triangle {
   margin: 0 auto;
   width: 150px;
   height: 150px;
-  grid-row-start: 3;
+  grid-row-start: 1;
   grid-column-start: 3;
 }
 
@@ -72,13 +19,33 @@
   margin: 0 auto;
   height: 150px;
   width: 150px;
-  grid-row-start: 3;
+  grid-row-start: 1;
   grid-column-start: 4;
 }
 
+
+.key {
+  grid-row-start: 2;
+  grid-column: 3;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  margin: 0 auto;
+  align-self: end;
+}
+
+
+.bells {
+  grid-row-start: 3;
+  grid-column: 2 / 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .bell {
-  width: 100px;
-  height: 50px;
+  width: 50px;
+  height: 25px;
   background-color: white;
   grid-row-start: 5;
   margin: 0 16px;
@@ -86,24 +53,7 @@
   justify-content: center;
   align-items: center;
   font-size: 25px;
-}
-
-.bell1 {
-  grid-column-start: 2;
-  justify-self: end;
-}
-
-.bell2 {
-  grid-column-start: 3;
-}
-
-.bell3 {
-  grid-column-start: 3;
-  justify-self: end;
-}
-
-.bell4 {
-  grid-column-start: 4;
+  cursor: pointer;
 }
 
 
