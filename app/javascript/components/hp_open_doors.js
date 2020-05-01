@@ -1,6 +1,6 @@
 const openDoor = (doorNum) => {
   const doorAnimation = () => {
-    const currentDoor = document.querySelector(`#svg-shapes .door${doorNum}`);
+    const currentDoor = document.querySelector(`.door${doorNum}`);
     currentDoor.style.zIndex = '102';
   };
 

@@ -13,20 +13,27 @@
   grid-column: 2 / 4
 }
 
-.triangle {
-  margin: 0 auto;
-  width: 150px;
-  height: 150px;
+.triangles {
   grid-row-start: 1;
   grid-column: 4 / 6;
+  width: 150px;
+  height: 150px;
+  position: relative;
+  margin: 0 auto;
 }
 
-.square {
-  margin: 0 auto;
+.squares {
   height: 150px;
   width: 150px;
   grid-row-start: 1;
-  grid-column: 6 / 8
+  grid-column: 6 / 8;
+  position: relative;
+  margin: 0 auto;
+}
+
+.triangle,
+.square {
+  position: absolute;
 }
 
 
