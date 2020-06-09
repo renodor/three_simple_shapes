@@ -8,22 +8,32 @@ const openDoor = (doorNum) => {
   // (calling-back itslef in the else statement if there are still lines to draw)
   // and then call the doorAnimation function
   const drawLine = (lineParams) => {
-    const { element, direction, limit } = lineParams[0];
-    let lineSize = 1;
-    const lineTimer = setInterval(() => {
-      if (lineSize < limit) {
-        lineSize += 1;
-        element.setAttribute('style', `${direction}: ${lineSize}%`);
-      } else {
-        clearInterval(lineTimer);
-        lineParams.shift();
-        if (lineParams.length > 0) {
-          drawLine(lineParams);
-        } else {
-          doorAnimation();
-        }
-      }
-    }, 10);
+    const lineLefts = document.querySelectorAll('.line-left');
+
+    lineLefts.forEach((line) => {
+      const lineToDraw = line;
+      lineToDraw.style.display = 'block';
+    });
+
+    // need to be asynchronus (or as a callback)
+    // so that door animation appear only once lines are drawn
+    doorAnimation();
+    // const { element, direction, limit } = lineParams[0];
+    // let lineSize = 1;
+    // const lineTimer = setInterval(() => {
+    //   if (lineSize < limit) {
+    //     lineSize += 1;
+    //     element.setAttribute('style', `${direction}: ${lineSize}%`);
+    //   } else {
+    //     clearInterval(lineTimer);
+    //     lineParams.shift();
+    //     if (lineParams.length > 0) {
+    //       drawLine(lineParams);
+    //     } else {
+    //       doorAnimation();
+    //     }
+    //   }
+    // }, 10);
   };
 
   // function to help create line objects with an element (html dom element),
@@ -73,7 +83,7 @@ const hpDoorPassword = () => {
         openDoor(3);
         break;
       default:
-        // no default required, but did it for the linter :)
+      // no default required, but did it for the linter :)
     }
   };
 
