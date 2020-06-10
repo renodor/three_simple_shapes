@@ -1,12 +1,11 @@
 // Specific CSS for your home-page
 
-
 .hp-grid {
   z-index: 50;
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template: 2fr 1fr 1fr 1fr / repeat(8, 1fr);
+  grid-template: 2fr minmax(200px, 1fr) 1fr / repeat(8, 1fr);
   align-items: end;
 }
 

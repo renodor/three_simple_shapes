@@ -40,7 +40,7 @@
 // bells & key
 
 .key {
-  grid-row-start: 3;
+  grid-row-start: 2;
   grid-column: 4 / 6;
   width: 10px;
   height: 10px;
@@ -51,7 +51,7 @@
 
 
 .bells {
-  grid-row-start: 4;
+  grid-row-start: 3;
   grid-column: 3 / 7;
   align-self: center;
   display: flex;
@@ -82,56 +82,5 @@
   position: absolute;
   width: 100%;
 }
-
-// lines
-
-.v-line {
-  // height: 100%;
-  width: 2px;
-  background-color: white;
-  margin: 0 auto;
-  align-self: end;
-  z-index: 101;
-}
-
-.v-line-left {
-  grid-row-start: 2;
-  grid-column: 2 / 4;
-}
-
-.v-line-middle {
-  grid-row-start: 2;
-  grid-column: 4 / 6;
-}
-
-.v-line-right {
-  grid-row-start: 2;
-  grid-column: 6 / 8;
-}
-
-.v-line-bottom {
-  grid-row-start: 3;
-  grid-column: 4 / 6;
-}
-
-.h-line {
-  grid-row: 2;
-  height: 2px;
-  background-color: white;
-  align-self: end;
-  z-index: 101;
-}
-
-.h-line-left {
-  grid-column: 3 / 5;
-  justify-self: end;
-}
-
-.h-line-right {
-  grid-column: 5 / 7;
-  justify-self: start;
-}
-
-
 
 
