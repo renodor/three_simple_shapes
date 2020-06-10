@@ -3,3 +3,9 @@
   justify-content: center;
   align-items: center;
 }
+
+.opacity-transition{
+  opacity: 1!important;
+  z-index: 102;
+  transition: opacity 3s linear;
+}

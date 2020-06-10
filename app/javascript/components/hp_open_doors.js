@@ -22,6 +22,8 @@ const openDoor = (doorNum) => {
   linesToDraw[0].querySelector('path').addEventListener('animationend', () => {
     const currentDoor = document.querySelector(`.door${doorNum}`);
     currentDoor.style.zIndex = '102';
+    const currentDoorOpen = document.querySelector(`.door${doorNum}-open`);
+    currentDoorOpen.classList.add('opacity-transition');
   });
 };
 
