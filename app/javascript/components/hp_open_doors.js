@@ -7,17 +7,21 @@ const openDoor = (doorNum) => {
   // recursive function that draw n number of lines one after the other (with n = lineParams.length)
   // (calling-back itslef in the else statement if there are still lines to draw)
   // and then call the doorAnimation function
-  const drawLine = (lineParams) => {
+  const drawLine = async (lineParams) => {
     const lineLefts = document.querySelectorAll('.line-left');
 
-    lineLefts.forEach((line) => {
+    await lineLefts.forEach((line) => {
       const lineToDraw = line;
       lineToDraw.style.display = 'block';
     });
 
+    lineLefts[0].querySelector('path').addEventListener('animationend', () => {
+      doorAnimation();
+    });
+
     // need to be asynchronus (or as a callback)
     // so that door animation appear only once lines are drawn
-    doorAnimation();
+
     // const { element, direction, limit } = lineParams[0];
     // let lineSize = 1;
     // const lineTimer = setInterval(() => {
